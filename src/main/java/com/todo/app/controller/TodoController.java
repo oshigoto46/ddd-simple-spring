@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.todo.app.entity.Todo;
-import com.todo.app.mapper.TodoMapper;
+import com.todo.app.dao.TodoMapper;
 
 @Controller
 public class TodoController {
