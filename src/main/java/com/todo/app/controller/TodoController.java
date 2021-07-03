@@ -10,12 +10,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.todo.app.entity.Todo;
 import com.todo.app.dao.TodoDao;
+import com.todo.app.service.TodoService;
 
 @Controller
 public class TodoController {
 
 	@Autowired
 	TodoDao todoDao;
+
+	@Autowired
+	TodoService todoService;
 
 	@RequestMapping(value="/")
 	public String index(Model model) {
@@ -33,8 +37,10 @@ public class TodoController {
 	@RequestMapping(value="/add")
 	@ResponseBody
 	public Todo add(Todo todo) {
-		todoDao.add(todo);
-		return todo;
+		return todoService.add(todo);
+		// todoDao.add(todo);
+		// return todo;
+
 	}
 
 	@RequestMapping(value="/update")
